@@ -23,12 +23,7 @@
 }
 \details{This is a simulated data set that I use to show how to estimate IV regression.
 }
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
-}
-\references{
-%%  ~~ possibly secondary sources and usages ~~
-}
+
 \examples{
 data(mktshare)
 }

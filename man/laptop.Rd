@@ -17,10 +17,6 @@
 \details{This data set is a convenience sample of laptop prices.  It should not be used for any purpose other than demonstrating methods and trying out functions in R.
 }
 \source{http://www.bizrate.com/
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
-}
-\references{
-%%  ~~ possibly secondary sources and usages ~~
 }
 \examples{
 data(laptop)

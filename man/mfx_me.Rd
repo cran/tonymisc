@@ -6,11 +6,8 @@
 \arguments{
   \item{x}{A glm object using binomial link function probit or logit.  The getSummary.mfx method doesn't know what to do with other types of glm objects.}
 }
-\details{}
 \value{Returns an object of type "mfx." }
-\references{}
 \author{J. Anthony Cookson}
-\note{}
 
 \seealso{\code{\link{getSummary.mfx}} \code{\link{mtable}}
 }

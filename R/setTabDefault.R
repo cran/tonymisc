@@ -40,11 +40,16 @@ temp.pgmm = c("($Wald.coef:f)", "($p.coef:f)", "($p.ar1:f)",
     setSummaryTemplate(ivreg=temp)
 
     
-  ## Sets IV Regression Default Reporting from TonyIV ##
-    temp = c("($r.squared:f#)", "($Ffirst:f#)", "($CC_pval:f#)", "($F:f#)", "($p:#)", 
+    ## Sets IV Regression Default Reporting from TonyIV ##
+    temp = c("($r.squared:f#)", "($Ffirst:f#)", "($CC_pval:f#)", "($Sarg_pval:f#)", "($F:f#)", "($p:#)", 
              "($N:d)")
-    names(temp) = c("R-squared","F (first stage)", "Anderson CC (p-value)", "F (omnibus)", "p-val (omnibus)", 
-                     "N")
+    names(temp) = c("R-squared","F (first stage)", "Anderson CC (p-value)","Sargan (p-value)", "F (omnibus)", "p-val (omnibus)", 
+                    "N")
     setSummaryTemplate(tonyiv=temp)
-  
+    
+    ## Sets IV Regression Default Reporting from TonyIV ##
+    temp = NULL
+    names(temp) = NULL
+    setSummaryTemplate(coeftest=temp)
+    
 }

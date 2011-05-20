@@ -28,10 +28,11 @@ getSummary.tonyiv= function (obj, alpha = 0.05, ...)
     pfirst <-obj$ftest[2,6]
     }
     CC_pval <-as.numeric(obj$CC_Test[1,3])
+    Sarg_pval <- as.numeric(obj$Sargan[1,2])
     
     p <- pf(F, numdf, dendf, lower.tail = FALSE)
     N <- sum(smry$df[1:2])
-    sumstat <- c(sigma = sigma, r.squared = r.squared, adj.r.squared = adj.r.squared, 
+    sumstat <- c(sigma = sigma, r.squared = r.squared, adj.r.squared = adj.r.squared, Sarg_pval = Sarg_pval,
         F = F, Ffirst=Ffirst,pfirst=pfirst, CC_pval = CC_pval, numdf = numdf, dendf = dendf, p = p, N = N)
     list(coef = coef, sumstat = sumstat, contrasts = obj$contrasts, 
         xlevels = obj$xlevels, call = obj$second$call)

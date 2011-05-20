@@ -18,14 +18,13 @@
   \item{first}{ A summary.lm object that contains the first stage of the IV regression }
   \item{ftest}{ An anova object containing the result of an F-test for instrument relevance in the IV regression }
   \item{cc}{ First-stage test of relevance that can handle testing for relevance with multiple endogenous regressors.  The null hypothesis of this test is that the minimum canonical correlation equals zero (see Anderson 2003).}
+  \item{sargan}{ Sargan test for exogeneity of instruments.  Returns NA if there are not more instruments than endogenous regressors.}
 %% ...
 }
 \references{T. W. Anderson (2003). An Introduction to Multivariate Statistical Analysis, Third Edition, Wiley. 
 }
 \author{ J. Anthony Cookson }
-\note{
-%%  ~~further notes~~
-}
+
 
 
 \seealso{ 

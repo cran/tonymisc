@@ -13,16 +13,10 @@
   \item{\dots}{
 }
 }
-\details{
-}
 \value{The function returns a linear models object with heteroskedasticity-consistent standard errors.
-}
-\references{
 }
 \author{J. Anthony Cookson (adapted the code from John Fox)
 }
-\note{}
-
 
 \seealso{\code{\link{hccm}} \code{\link{linearHypothesis}} 
 }

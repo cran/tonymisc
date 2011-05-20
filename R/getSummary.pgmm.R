@@ -1,5 +1,6 @@
 getSummary.pgmm = function (obj, alpha = 0.05, ...) 
 {
+  require(gmm)
     setTabDefault()
     smry <- summary(obj)
     coef <- smry$CoefTable

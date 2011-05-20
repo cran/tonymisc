@@ -20,11 +20,8 @@ License: \tab GPL-2\cr
 Maintainer: J. Anthony Cookson <tony.cookson@gmail.com>
 
 }
-\references{
-}
 
 \keyword{ package }
 \seealso{
 \code{\link[AER]{ivreg}} \code{\link[memisc]{mtable}}
 }
-\examples{}

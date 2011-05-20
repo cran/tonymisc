@@ -2,18 +2,17 @@
 \alias{robust}
 \title{Robust Objects / Selective Variable Reporting for mtable()}
 \description{This function coerces lm objects to type robust and allows the user to specify the type of heteroskedasticity correction.  The function is intended to be used with summaryR to interface with mtable() to produce nicely-formatted output.}
-\usage{robust(model, type = "hc3", keep=NULL, drop=NULL)}
+\usage{robust(model, type = "hc3", keep=NULL, drop=NULL, vcov=NULL, se = NULL)}
 \arguments{
   \item{model}{A linear models object.}
   \item{type}{The type of heteroskedasticity correction you want to specify.  Options include "no", "hc0", "hc1", "hc2", "hc3" and "hc4" with "hc3" as the default. For more information on these corrections see the help file for hccm.  A user would specify "no" to selectively display output from a lm() fit using mtable().}
   \item{keep}{A vector of variable names you would like to display using mtable().  Defaults to NULL.}
   \item{drop}{A vector of variable names you would like to not display using mtable().  Defaults to NULL.  If both keep and drop are NULL, the default is to print output for all variables in the model.  If keep and drop are specified, keep takes precedence, except in the case of dropping an intercept.  See examples below.}
+  \item{vcov}{User-supplied variance-covariance matrix.}
+  \item{se}{User-supplied vector of standard errors.}
 }
-\details{}
 \value{Returns an object of type "robust." }
-\references{}
 \author{J. Anthony Cookson}
-\note{}
 
 \seealso{\code{\link{hccm}} \code{\link{summaryR}} \code{\link{getSummary.robust}} \code{\link{mtable}}
 }

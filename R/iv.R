@@ -3,7 +3,8 @@ iv = function (second, first, data)
     s.names = tony.vars2(second)$vars
     f.names = tony.vars2(first)$vars
     n_endog = tony.vars2(first)$lhs
-    
+    N = length(data[,1])
+        
     all.names = c(s.names, f.names)
     resp = s.names[1]
     sel_endog = 1:n_endog
@@ -68,18 +69,37 @@ iv = function (second, first, data)
     CC_test = cbind(mincc_test, mincc_df, mincc_pval)
     
     z = summary(second.lm)
-    Y = data[resp]
-    fit = X %*% second.lm$coefficients
+    Y = as.vector(data[resp])
+    fit = as.vector(X %*% second.lm$coefficients)
     res = Y - fit
+    
+    ## Tests for overidentifying restrictions ##
+    data3 = cbind(data2, res)
+    names(data3) = c(names(data2), "res")
+
+    ## Sargan's Test
+    S.test     = as.data.frame(matrix(c(NA,NA ),nrow=1))
+    names(S.test) = c("S.stat","P[S > S.stat ]")
+
+    if(num_inst>num_endog){
+        S.form = as.formula(paste("res", "~", RHS))
+        S.lm = lm(S.form, data3)
+        S.stat = N*summary(S.lm)$r.squared
+        S.test[1,1] = S.stat
+        S.test[1,2] = 1-pchisq(S.stat, length(inst)-1)
+    }
+
+    
+    
     SSE = sum(res^2)
-    SST = sum((Y - mean(Y))^2)
+    SST = sum((Y - colMeans(Y))^2)
     R2 = (SST - SSE)/SST
     z$r.squared = R2
     xPx = t(X2) %*% X2
     xPx.inv = solve(xPx)
     z$cov.unscaled = xPx.inv
     z$residuals = res
-    z$sigma = sqrt(mean(res^2))
+    z$sigma = sqrt(colMeans(res^2))
     varcovmat = z$cov.unscaled * z$sigma
     coef = z$coefficients[, 1]
     IV.SE = t(z$sigma * sqrt(diag(xPx.inv)))
@@ -88,8 +108,8 @@ iv = function (second, first, data)
     z$coefficients[, 2] = IV.SE
     z$coefficients[, 3] = t.iv
     z$coefficients[, 4] = p.val
-    result = list(summary(first.lm), z, ftest, coef, cc, num_endog, num_inst, CC_test, res, fit)
-    names(result) = c("first", "second", "ftest", "coefficients", "cc", "endog", "inst", "CC_Test", "residuals", "fitted.values")
+    result = list(summary(first.lm), z, ftest, coef, cc, num_endog, num_inst, CC_test, res, fit, S.test)
+    names(result) = c("first", "second", "ftest", "coefficients", "cc", "endog", "inst", "CC_Test", "residuals", "fitted.values", "Sargan")
     class(result) = c("tonyiv")
     return(invisible(result))
 }

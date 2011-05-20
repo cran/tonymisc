@@ -12,16 +12,10 @@ mfx(x)
   \item{x}{A .glm fitted object created using a binomial family with a probit or logit link function.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{Returns a standard glm list (see \code{\link{glm}} for details), but with marginal effects in place of ecoefficients and an object of class "mfx." 
 }
-\references{
-}
+
 \author{J. Anthony Cookson (adaptation of code from a blog post by TimeSeriesIreland)
-}
-\note{
 }
 
 \seealso{\code{\link{mfx_me}} \code{\link{glm}} \code{\link{getSummary.mfx}}

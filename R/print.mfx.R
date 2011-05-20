@@ -8,12 +8,12 @@ print.mfx = function(x, ...){
 	cat("", "\n")
 	cat("Reporting Marginal Effects, Evaluated at the Mean", "\n")
 	cat("", "\n")
-	printCoefmat(x$coefficients[-1,], P.value=TRUE, has.Pvalue=TRUE)
+	printCoefmat(x$coefficients[-1,], P.values=TRUE, has.Pvalue=TRUE)
 	cat("", "\n")
 	cat("Observations:", x$obs, "\n")
 	cat("", "\n")
 	cat("Likelihood-Ratio Test:", "\n")
-	printCoefmat(x$LRTest, P.value=TRUE, has.Pvalue=TRUE)
+	printCoefmat(x$LRTest, P.values=TRUE, has.Pvalue=TRUE)
 	cat("", "\n")
   
   }

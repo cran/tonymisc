@@ -5,7 +5,7 @@
 \description{This command is the equivalent of a summary command for IV regression objects created using iv() from the tonymisc library.
 }
 \usage{
-sum_iv(reg_iv, first = FALSE, ftest = FALSE, second = TRUE, cc = FALSE)
+sum_iv(reg_iv, first = FALSE, ftest = FALSE, second = TRUE, cc = FALSE, sargan = FALSE)
 }
 \arguments{
   \item{reg_iv}{A iv()-created IV regression object.
@@ -18,16 +18,12 @@ sum_iv(reg_iv, first = FALSE, ftest = FALSE, second = TRUE, cc = FALSE)
 }
   \item{cc}{If TRUE, display the Anderson (2003) Canonical Correlation test for first-stage relevance.  Default FALSE.
 }
+ \item{sargan}{If TRUE, display the Sargan test for instrument exogeneity.  Default FALSE.
 }
-\details{
 }
 \value{The method just prints output to the screen.
 }
-\references{
-}
 \author{ J. Anthony Cookson
-}
-\note{
 }
 
 \seealso{

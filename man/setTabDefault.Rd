@@ -7,21 +7,9 @@
 \usage{
 setTabDefault()
 }
-%- maybe also 'usage' for other objects documented here.
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{J. Anthony Cookson
-}
-\note{
-%%  ~~further notes~~
 }
 
 \seealso{ \code{\link{mtable}}  \code{\link{gls}}  \code{\link{ivreg}}
 }
-\examples{}

@@ -32,6 +32,17 @@ getSummary.robust= function (obj, alpha = 0.05, ...)
    class(obj) = "lm"
     smry <- summaryR(obj, type = obj$type)
     coef <- smry$coef
+    se <- coef[,2]
+    if(is.null(obj$uvcov)==FALSE){
+      se <- sqrt(diag(obj$uvcov))
+    }
+    if(is.null(obj$use)==FALSE){
+      se <- obj$use
+    }
+    coef[,2] <- se
+    coef[,3] <- coef[,1]/coef[,2]
+    coef[,4] <- 2*pnorm(abs(coef[,3]), lower.tail=FALSE)
+    
     coef <- matrix(coef[keepnames,],ncol = 4)
     rownames(coef)=keepnames
     

@@ -6,6 +6,7 @@
 \alias{getSummary.plm}
 \alias{getSummary.pgmm}
 \alias{getSummary.mfx}
+\alias{getSummary.coeftest}
 \title{getSummary Methods for Extending mtable()
 }
 \description{These functions are getSummary methods for extending the mtable() to report robust standard errors (.robust), IV regression estimates (.ivreg and .tonyiv), summary output from GLS fits (.gls), marginal effects for probit and logit (.mfx), and panel models output (.plm and .pgmm).  The robust() command allows the user not only to specify the type of robust standard error correction, but also to specify the set of variables to be included in the summary output.
@@ -18,13 +19,10 @@
 }
   \item{\dots}{Arguments passed to getSummary}
 }
-\details{
-}
+
 \value{Returns a list of objects to be referenced by mtable.  Do not use these methods directly. Use mtable, which will automatically call these methods for class objects that have been implemented.
 }
-\references{}
 \author{J. Anthony Cookson}
-\note{}
 
 \seealso{\code{\link{toLatex}} \code{\link{mtable}} \code{\link{robust}} \code{\link{setTabDefault}} }
 
