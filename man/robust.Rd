@@ -1,7 +1,7 @@
 \name{robust}
 \alias{robust}
 \title{Robust Objects / Selective Variable Reporting for mtable()}
-\description{This function coerces lm objects to type robust and allows the user to specify the type of heteroskedasticity correction.  The function is intented to be used with summaryR to interface with mtable() to produce nicely-formatted output.}
+\description{This function coerces lm objects to type robust and allows the user to specify the type of heteroskedasticity correction.  The function is intended to be used with summaryR to interface with mtable() to produce nicely-formatted output.}
 \usage{robust(model, type = "hc3", keep=NULL, drop=NULL)}
 \arguments{
   \item{model}{A linear models object.}
@@ -18,15 +18,11 @@
 \seealso{\code{\link{hccm}} \code{\link{summaryR}} \code{\link{getSummary.robust}} \code{\link{mtable}}
 }
 \examples{
-library(memisc)
 library(tonymisc)
 
 data(mktshare)
 
 mkt.lm = lm(y~x1+x2+p+z1, data=mktshare)
-
-## Given an "lm" object robust formats options for mtable's .robust extension ##
-setRobustDefault()
 
 mkt.rob = robust(mkt.lm)                ## Default is hc3 heteroskedasticity corrrection
 mkt.rob2 = robust(mkt.lm, type = "hc1") ## Can specify hc0, hc1, hc2, hc3

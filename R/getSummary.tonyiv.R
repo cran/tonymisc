@@ -1,7 +1,6 @@
 getSummary.tonyiv= function (obj, alpha = 0.05, ...) 
 {
-   
-   class(obj) = "lm"
+    setTabDefault()
     smry <- obj$second
     coef <- smry$coef    
     numdf <- unname(smry$fstatistic[2])
@@ -14,13 +13,26 @@ getSummary.tonyiv= function (obj, alpha = 0.05, ...)
     r.squared <- smry$r.squared
     adj.r.squared <- smry$adj.r.squared
     F <- unname(smry$fstatistic[1])
+    if(class(obj$ftest)[1]=="list"){
+      fame = NULL
+      for(i in 1:length(obj$ftest)){
+        tempo = obj$ftest[[i]]
+        fame  = c(fame,tempo[2,5])
+      }
+      Ffirst <- mean(fame)
+      pfirst <- -1
+      cat("Multiple Instruments: Look at CC p-value for test of relevance \n")
+    }
+    else{
     Ffirst <-obj$ftest[2,5]
     pfirst <-obj$ftest[2,6]
+    }
+    CC_pval <-as.numeric(obj$CC_Test[1,3])
+    
     p <- pf(F, numdf, dendf, lower.tail = FALSE)
     N <- sum(smry$df[1:2])
-    type <- ifelse(obj$type=="no", 9,as.numeric(substring(obj$type, 3, 3)))
     sumstat <- c(sigma = sigma, r.squared = r.squared, adj.r.squared = adj.r.squared, 
-        F = F, Ffirst=Ffirst,pfirst=pfirst, numdf = numdf, dendf = dendf, p = p, N = N, type = type)
+        F = F, Ffirst=Ffirst,pfirst=pfirst, CC_pval = CC_pval, numdf = numdf, dendf = dendf, p = p, N = N)
     list(coef = coef, sumstat = sumstat, contrasts = obj$contrasts, 
         xlevels = obj$xlevels, call = obj$second$call)
 }

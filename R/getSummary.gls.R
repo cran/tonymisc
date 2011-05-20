@@ -1,7 +1,6 @@
-## Not Finished Yet
-
 getSummary.gls <- function (obj, alpha = 0.05, ...) 
 {
+    setTabDefault()
     smry <- summary(obj)
     coef <- smry$tTable
     confints <- intervals(obj,level=1-alpha)$coef[,c(1,3)]

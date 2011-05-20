@@ -1,6 +1,7 @@
 getSummary.ivreg <-
 function (obj, alpha = 0.05, ...) 
 {
+    setTabDefault()
     smry <- summary(obj)
     coef <- smry$coef
     numdf <- unname(smry$df[3])

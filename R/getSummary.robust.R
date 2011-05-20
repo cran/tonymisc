@@ -1,5 +1,6 @@
 getSummary.robust= function (obj, alpha = 0.05, ...) 
 {
+   setTabDefault()
    allnames = names(obj$coefficients)
    keep = obj$keep
    drop = obj$drop
@@ -25,7 +26,7 @@ getSummary.robust= function (obj, alpha = 0.05, ...)
      RHS = ifelse(keepnames[1]=="(Intercept)", paste(keepnames[-1],collapse="+"), paste(c("0",keepnames),collapse="+"))
    }
 
-   resp  = all.vars(formula(obj$call))[1]
+   resp  = tony.vars(formula(obj$call))[1]
    
    callio= call("lm",resp~RHS,data=obj$call$data)
    class(obj) = "lm"
