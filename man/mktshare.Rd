@@ -23,7 +23,6 @@
 }
 \details{This is a simulated data set that I use to show how to estimate IV regression.
 }
-
 \examples{
 data(mktshare)
 }

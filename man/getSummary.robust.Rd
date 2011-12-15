@@ -19,7 +19,6 @@
 }
   \item{\dots}{Arguments passed to getSummary}
 }
-
 \value{Returns a list of objects to be referenced by mtable.  Do not use these methods directly. Use mtable, which will automatically call these methods for class objects that have been implemented.
 }
 \author{J. Anthony Cookson}

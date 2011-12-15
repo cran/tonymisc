@@ -26,7 +26,6 @@
 \author{ J. Anthony Cookson }
 
 
-
 \seealso{ 
 \code{\link[sem]{tsls} }, \code{\link[AER]{ivreg} }, \code{\link[memisc]{mtable} } 
 }

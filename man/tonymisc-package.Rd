@@ -10,8 +10,8 @@
 \tabular{ll}{
 Package: \tab tonymisc\cr
 Type: \tab Package\cr
-Version: \tab 1.0.1\cr
-Date: \tab 2011-05-15\cr
+Version: \tab 1.1.1\cr
+Date: \tab 2011-12-15\cr
 License: \tab GPL-2\cr
 }
 
@@ -25,3 +25,4 @@ Maintainer: J. Anthony Cookson <tony.cookson@gmail.com>
 \seealso{
 \code{\link[AER]{ivreg}} \code{\link[memisc]{mtable}}
 }
+

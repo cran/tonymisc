@@ -14,10 +14,8 @@ mfx(x)
 }
 \value{Returns a standard glm list (see \code{\link{glm}} for details), but with marginal effects in place of ecoefficients and an object of class "mfx." 
 }
-
 \author{J. Anthony Cookson (adaptation of code from a blog post by TimeSeriesIreland)
 }
-
 \seealso{\code{\link{mfx_me}} \code{\link{glm}} \code{\link{getSummary.mfx}}
 }
 \examples{

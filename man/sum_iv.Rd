@@ -23,8 +23,10 @@ sum_iv(reg_iv, first = FALSE, ftest = FALSE, second = TRUE, cc = FALSE, sargan =
 }
 \value{The method just prints output to the screen.
 }
+
 \author{ J. Anthony Cookson
 }
+
 
 \seealso{
 \code{\link{iv}},\code{\link{mtable}}

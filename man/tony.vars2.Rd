@@ -13,5 +13,6 @@ tony.vars2(x)
 }
 \value{ Returns a list of variable names.
 }
+
 \author{ J. Anthony Cookson
 }

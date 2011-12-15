@@ -26,6 +26,7 @@ lagger(data, by.var, lag.vars, num.lags, direction, freq = "daily")
 }
 \author{ Sean Golden and Ian Muir (with adaptations by J. Anthony Cookson)
 }
+
 \seealso{
 \code{\link{as.Date}},\code{\link{Date}}
 }

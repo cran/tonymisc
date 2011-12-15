@@ -22,20 +22,19 @@
     \item{\code{region}}{Region of Residence, a factor with levels \code{enocent} \code{esocent} \code{midatl} \code{mt} \code{neweng} \code{other} \code{soatl} \code{wnocent} \code{wsocent}}
   }
 }
-
 \source{http://econ-www.mit.edu/faculty/angrist/data1/data/angkru1991
 }
 \references{ Does Compulsory School Attendance Affect Schooling and Earnings? Joshua D. Angrist and Alan B. Krueger. The Quarterly Journal of Economics. Vol. 106, No. 4 (Nov., 1991), pp. 979-1014 
 }
 \examples{
 
-## Reproduce the First Two Columns of Table IV, Angrist and Krueger (1991) ##
-library(tonymisc)
-library(memisc)
-data(AK91)
-ak.lm1 = lm(lwklywge~yob+educ, data=AK91)
-ak.iv1 = iv(lwklywge~yob+educ,educ~yob:qob, data=AK91)
-setTabDefault()
-mtable(ak.lm1, ak.iv1)
+## Reproduce the First Two Columns of Table IV, Angrist and Krueger (1991) ## Not Run.  Takes ~ 15 seconds
+# library(tonymisc)
+# library(memisc)
+# data(AK91)
+# ak.lm1 = lm(lwklywge~yob+educ, data=AK91)
+# ak.iv1 = iv(lwklywge~yob+educ,educ~yob:qob, data=AK91)
+# setTabDefault()
+# mtable(ak.lm1, ak.iv1)
 }
 \keyword{datasets}

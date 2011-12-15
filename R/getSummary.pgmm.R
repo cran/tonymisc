@@ -3,7 +3,7 @@ getSummary.pgmm = function (obj, alpha = 0.05, ...)
   require(gmm)
     setTabDefault()
     smry <- summary(obj)
-    coef <- smry$CoefTable
+    coef <- smry$coefficients
     lower <- coef[, 1] + coef[, 2] * qnorm(p = alpha/2)
     upper <- coef[, 1] + coef[, 2] * qnorm(p = 1 - alpha/2)
     coef <- cbind(coef, lower, upper)

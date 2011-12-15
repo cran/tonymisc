@@ -11,7 +11,9 @@ tony.vars(x)
   \item{x}{ The only argument is a formula statement.
 }
 }
+
 \value{ Returns a list of variable names.
 }
+
 \author{ J. Anthony Cookson
 }

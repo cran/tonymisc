@@ -11,8 +11,11 @@
   \item{vcov}{User-supplied variance-covariance matrix.}
   \item{se}{User-supplied vector of standard errors.}
 }
+
 \value{Returns an object of type "robust." }
+
 \author{J. Anthony Cookson}
+
 
 \seealso{\code{\link{hccm}} \code{\link{summaryR}} \code{\link{getSummary.robust}} \code{\link{mtable}}
 }

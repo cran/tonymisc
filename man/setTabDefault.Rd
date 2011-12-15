@@ -7,9 +7,9 @@
 \usage{
 setTabDefault()
 }
-
 \author{J. Anthony Cookson
 }
+
 
 \seealso{ \code{\link{mtable}}  \code{\link{gls}}  \code{\link{ivreg}}
 }
